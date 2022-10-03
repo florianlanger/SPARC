@@ -4,7 +4,7 @@ Official implementation of the paper
 
 > **SPARC: Sparse Render-and-Compare for CAD model alignment from a single RGB image** \
 > British Machine Vision Conference 2022
-> [Florian Langer][flo], [Gwangbin Bae][gb] [Ignas Budvytis][ignas], [Roberto Cipolla][roberto] \
+> [Florian Langer][flo], [Gwangbin Bae][gb], [Ignas Budvytis][ignas], [Roberto Cipolla][roberto] \
 > [arXiv][1]
 
 Code will be released soon!
