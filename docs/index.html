@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IronDepth</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <script src="https://kit.fontawesome.com/49f46e7382.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="container is-max-desktop">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://www.cam.ac.uk/">
+                    <img src="img/logo/Cam_bw.png" alt="University of Cambridge" style="height: 2.0rem;">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item navbar-right" href="https://bmvc2022.org/">
+                        <img src="img/logo/bmvc-logo.png" alt="BMVC 2022" style="height: 2.0rem;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column align-center is-hidden-mobile">
+                    <img src="img/irondepth/irondepth-pad.png" />
+                </div>
+                <div class="column align-center is-hidden-desktop is-hidden-tablet">
+                    <img src="img/irondepth/irondepth.png" />
+                </div>
+            </div>
+            <h1 class="title is-2 is-size-3-mobile is-spaced has-text-centered">
+                IronDepth: Iterative Refinement of Single-View Depth using Surface Normal and its Uncertainty
+            </h1>
+            <p class="subtitle is-5 has-text-centered has-text-grey">
+                BMVC 2022
+            </p>
+            <p class="subtitle is-6 has-text-centered authors mt-5" style="line-height: 1.5;">
+                <span>
+                    <a href="https://www.baegwangbin.com">Gwangbin&nbsp;Bae</a>
+                </span>
+                <span>
+                    <a href="http://mi.eng.cam.ac.uk/~ib255/">Ignas&nbsp;Budvytis</a>
+                </span>
+                <span>
+                    <a href="https://mi.eng.cam.ac.uk/~cipolla/">Roberto&nbsp;Cipolla</a>
+                </span>
+            </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered mt-5">
+            <a href="https://github.com/baegwangbin/IronDepth/raw/main/paper.pdf" class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+            </a>
+            <a href="https://arxiv.org/abs/2210.03676" class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+            </a>
+            <a href="https://github.com/baegwangbin/IronDepth" class="button is-rounded is-link is-light">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+            </a>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                TL;DR
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+                    <ul>
+                        <li>We use <b>surface normal</b> to propagate depth between pixels.</li>
+                        <li>We formulate depth refinement/upsampling as <b>classification</b> of choosing the neighboring pixel to propagate from.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop is-hidden-mobile">
+            <h1 class="title is-4">
+                Demo
+            </h1>
+            <iframe style="display: block; margin: auto;" width="768" height="432" src="https://www.youtube.com/embed/mf8keH9brF0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="container is-max-desktop is-hidden-desktop is-hidden-tablet">
+            <h1 class="title is-4">
+                Demo
+            </h1>
+            <iframe style="display: block; margin: auto;" width="300" height="200" src="https://www.youtube.com/embed/mf8keH9brF0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <!-- <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Abstract
+            </h1>
+            <div class="content has-text-justified-desktop">
+                Single image surface normal estimation and depth estimation are closely related problems as the former can be calculated from the latter. 
+                However, the surface normals computed from the output of depth estimation methods are significantly less accurate than the surface normals directly estimated by networks. 
+                To reduce such discrepancy, we introduce a novel framework that uses surface normal and its uncertainty to recurrently refine the predicted depth-map. 
+                The depth of each pixel can be propagated to a query pixel, using the predicted surface normal as guidance. 
+                We thus formulate depth refinement as a classification of choosing the neighboring pixel to propagate from. 
+                Then, by propagating to sub-pixel points, we upsample the refined, low-resolution output. 
+                The proposed method shows state-of-the-art performance on NYUv2 and iBims-1 - both in terms of depth and normal. 
+                Our refinement module can also be attached to the existing depth estimation methods to improve their accuracy. 
+                We also show that our framework, only trained for depth estimation, can also be used for depth completion. 
+                The code is available at https://github.com/baegwangbin/IronDepth.
+            </div>
+        </div>
+    </section> -->
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Motivation
+            </h1>
+            <figure class="image">
+                <img src="img/irondepth/normal.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p> In our <a href="https://github.com/baegwangbin/surface_normal_uncertainty">previous work</a>, we estimated the <b>aleatoric uncertainty in surface normal estimation</b>, and used it to improve the quality of prediction for small structures and object boundaries.
+                    We believe that the estimated surface normal (and its uncertainty) can be useful in various computer vision tasks. 
+                    In our <a href="https://arxiv.org/abs/2210.01044">recent work</a>, we showed that it can be used to <b>align CAD models</b> to the objects in the image.
+                    In this work, we show that it can improve <b>monocular depth estimation</b>.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Method
+            </h1>
+            <figure class="image">
+                <img src="img/irondepth/normal-guided-propagation.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>The depth of each pixel can be propagated to a query pixel, using the predicted surface normal as guidance. 
+                            We thus formulate depth refinement as classification of choosing the neighboring pixel to propagate from. 
+                </p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/pipeline.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>To maintain computational efficiency, we perform the refinement in coarse resolution (H/8 x W/8).
+                    Then, we upsample the refined low-resolution depth-map, again using the normal-guided propagation. 
+                    The depth of each pixel in the upsampled depth-map is given as the weighted sum of the depths propagated from its coarse resolution neighbors.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Results
+            </h1>
+            <figure class="image">
+                <img src="img/irondepth/results_qt.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/results_ql.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>Compared to the existing depth estimation methods, the improvement in depth accuracy is small. 
+                    However, when you calculate the surface normal from the predicted depth-map and measure its accuracy, our method is significantly more accurate than the other methods.
+                </p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/depth_refinement.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>IronDepth can also be used as a post-processing tool to improve the accuracy of the existing depth estimation methods.
+                </p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/depth_completion.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p> Since we refine the predicted depth-map by propagating information between pixels, we can seamlessly apply our method to a scenario where sparse depth measurements are available (i.e. depth completion setup). 
+                    Given a sparse depth measurement, we can add anchor points by fixing the depth for the pixels with measurement. 
+                    The information provided for the anchor points (i.e. the measured depth) can be propagated to neighboring pixels, making the overall prediction more accurate.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                BibTeX
+            </h1>
+            <pre>
+@inproceedings{bae2022irondepth,
+    title={IronDepth: Iterative Refinement of Single-View Depth using Surface Normal and its Uncertainty},
+    author={Bae, Gwangbin and Budvytis, Ignas and Cipolla, Roberto},
+    booktitle={British Machine Vision Conference (BMVC)},
+    year={2022}
+}
+</pre>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <img src="img/logo/Cam_bw.png" class="mt-5" alt="University of Cambridge" style="height: 2rem;">
+            </p>
+        </div>
+    </footer>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
+</html>
