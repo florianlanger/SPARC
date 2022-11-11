@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IronDepth</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/logo.ico" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <script src="https://kit.fontawesome.com/49f46e7382.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="container is-max-desktop">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://www.cam.ac.uk/">
+                    <img src="img/logo/Cam_bw.png" alt="University of Cambridge" style="height: 2.0rem;">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item navbar-right" href="https://bmvc2022.org/">
+                        <img src="img/logo/bmvc-logo.png" alt="BMVC 2022" style="height: 2.0rem;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column align-center is-hidden-mobile">
+                    <img src="img/irondepth/irondepth-pad.png" />
+                </div>
+                <div class="column align-center is-hidden-desktop is-hidden-tablet">
+                    <img src="img/irondepth/irondepth.png" />
+                </div>
+            </div>
+            <h1 class="title is-2 is-size-3-mobile is-spaced has-text-centered">
+                SPARC: Sparse Render-and-Compare for CAD model alignment from a single RGB image
+            </h1>
+            <p class="subtitle is-5 has-text-centered has-text-grey">
+                BMVC 2022
+            </p>
+            <p class="subtitle is-6 has-text-centered authors mt-5" style="line-height: 1.5;">
+                <span>
+                    <a href="https://www.florianlanger.co.uk">Florian Langer</a>
+                </span>
+                <span>
+                    <a href="https://www.baegwangbin.com">Gwangbin&nbsp;Bae</a>
+                </span>
+                <span>
+                    <a href="http://mi.eng.cam.ac.uk/~ib255/">Ignas&nbsp;Budvytis</a>
+                </span>
+                <span>
+                    <a href="https://mi.eng.cam.ac.uk/~cipolla/">Roberto&nbsp;Cipolla</a>
+                </span>
+            </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered mt-5">
+            <!-- <a href="https://github.com/baegwangbin/IronDepth/raw/main/paper.pdf" class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+            </a> -->
+            <a href="https://arxiv.org/pdf/2210.01044v1.pdf" class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+            </a>
+            <a href="https://github.com/florianlanger/sparc" class="button is-rounded is-link is-light">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+            </a>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                TL;DR
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>
+                    <ul>
+                        <li>We sample a set of <b>sparse points</b>  and <b>surface normals</b> from a <b>CAD model</b> in an initial pose and provide those in combination with <b>estimated depth</b> and <b>surface normals from an image</b> as input to a network.</li>
+                        <li>The network learns to predict <b>pose updates</b> such as to align the CAD model with the object in the image.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop is-hidden-mobile">
+            <h1 class="title is-4">
+                Demo
+            </h1>
+            <iframe style="display: block; margin: auto;" width="768" height="432" src="https://www.youtube.com/embed/eVVW__0QGnM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="container is-max-desktop is-hidden-desktop is-hidden-tablet">
+            <h1 class="title is-4">
+                Demo
+            </h1>
+            <iframe style="display: block; margin: auto;" width="300" height="200" src="https://www.youtube.com/embed/eVVW__0QGnM" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <!-- <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Abstract
+            </h1>
+            <div class="content has-text-justified-desktop">
+                Single image surface normal estimation and depth estimation are closely related problems as the former can be calculated from the latter. 
+                However, the surface normals computed from the output of depth estimation methods are significantly less accurate than the surface normals directly estimated by networks. 
+                To reduce such discrepancy, we introduce a novel framework that uses surface normal and its uncertainty to recurrently refine the predicted depth-map. 
+                The depth of each pixel can be propagated to a query pixel, using the predicted surface normal as guidance. 
+                We thus formulate depth refinement as a classification of choosing the neighboring pixel to propagate from. 
+                Then, by propagating to sub-pixel points, we upsample the refined, low-resolution output. 
+                The proposed method shows state-of-the-art performance on NYUv2 and iBims-1 - both in terms of depth and normal. 
+                Our refinement module can also be attached to the existing depth estimation methods to improve their accuracy. 
+                We also show that our framework, only trained for depth estimation, can also be used for depth completion. 
+                The code is available at https://github.com/baegwangbin/IronDepth.
+            </div>
+        </div>
+    </section> -->
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Motivation
+            </h1>
+            <!-- <figure class="image">
+                <img src="img/irondepth/normal.png"/>
+            </figure> -->
+            <div class="content has-text-justified-desktop">
+                <p>
+                    Render-and-Compare allows for precise CAD model alignments. However, traditionally it is very slow and requires a good initialisation.
+                    It is slow because
+                    <ol>
+                        <li>it requires to render full objects.</li>
+                        <li>it then requires to process fully-rendered images.</li>
+                        <li>a similarity function between the image and the render is maximised via gradient descent which requires a large number of iterations (100s to 1000).</li>
+                    </ol>
+                    It requires a good initialisation because
+                    <ol start="4">
+                        <li>maximising the similarity function may get stuck in local optima.</li>
+                    </ol>
+                    We address 1. and 2. by only sampling a set of sparse points and surface normals from the CAD model to be rendered and then processing only those sparse inputs as opposed to a full image.
+                    We address 3. and 4. by using a network to directly predict pose updates rather than a similarity function which reduces the number of iterations needed to just 3 and simultaneously makes the network robust to object initialisations.
+                </p>
+                <!-- <p> In our <a href="https://github.com/baegwangbin/surface_normal_uncertainty">previous work</a>, we estimated the <b>aleatoric uncertainty in surface normal estimation</b>, and used it to improve the quality of prediction for small structures and object boundaries.
+                    We believe that the estimated surface normal (and its uncertainty) can be useful in various computer vision tasks. 
+                    In our <a href="https://arxiv.org/abs/2210.01044">recent work</a>, we showed that it can be used to <b>align CAD models</b> to the objects in the image.
+                    In this work, we show that it can improve <b>monocular depth estimation</b>.
+                </p> -->
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Method
+            </h1>
+            <figure class="image">
+                <img src="img/irondepth/sparc_method_1.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>
+                    The input to the pose prediction network comes from three different sources: the 2D image, the 3D CAD model and extra information.
+                </p>
+                <p>
+                    <b>2D Image Information:</b> We sample a set of pixels in the image for which we use their RGB values as well as the estimated depth and surface normals as input to the network. This information is stacked channelwise and we additionally stack the pixel coordinates (u,v) as well as a token tau to inform the network where this information is coming from in the image.
+                </p>
+                <p>
+                    <b>3D CAD Model Information:</b> We sample a set of points (between 100 and 1000) and corresponding
+                    surface normals from the CAD model and use the current CAD model pose to reproject them into the image plane.
+                    Similar to the 2D image we stack all available information and pixel coordinate as well as a different token 
+                    tau to inform the network that this information comes from the CAD model.
+                </p>
+                <p>
+                    <b>Extra Information:</b> Additionally we explicitly provide the predicted bounding box, the current CAD model pose and ID in the database as input to the netowrk.
+                </p>
+                </h3>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/sparc_method_2.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>This combined information is the input to the pose update prediction network which predicts refinements
+                    Delta Q, Delta T and Delta S which update the rotation, translation and scale of the CAD model
+                    (In the figure above c is a classification score indicating how likely the current rotation is to be within 45° of the correct rotation.
+                    This is used to choose from what rotation to initialise the pose.). We use the Perceiver architecture whose cross-attention allows it to efficiently process large inputs.</p>
+                </p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/sparc_method_3.png"/>
+            </figure>
+            <p></p>
+                <p>We update the CAD models pose with the predicted refinements and sample the new inputs for the next iteration. This process is repeated 3 times.</p>
+                </p>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Results
+            </h1>
+            <figure class="image">
+                <img src="img/irondepth/sparc_results_qualitative.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>We train and evaluate SPARC on the ScanNet dataset. Comparing visually to the previous state-of-the-art ROCA we find that SPARC produces more accurate alignments. These mostly result from better translation and scale predictions.</p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/sparc_results_quantitative.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p> Quantitatively we find that SPARC outperforms all competitors for both the class average as well as the instance average by a large margin.
+                </p>
+            </div>
+            <!-- <figure class="image">
+                <img src="img/irondepth/depth_refinement.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p>IronDepth can also be used as a post-processing tool to improve the accuracy of the existing depth estimation methods.
+                </p>
+            </div>
+            <figure class="image">
+                <img src="img/irondepth/depth_completion.png"/>
+            </figure>
+            <div class="content has-text-justified-desktop">
+                <p></p>
+                <p> Since we refine the predicted depth-map by propagating information between pixels, we can seamlessly apply our method to a scenario where sparse depth measurements are available (i.e. depth completion setup). 
+                    Given a sparse depth measurement, we can add anchor points by fixing the depth for the pixels with measurement. 
+                    The information provided for the anchor points (i.e. the measured depth) can be propagated to neighboring pixels, making the overall prediction more accurate.
+                </p>
+            </div> -->
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop is-hidden-mobile">
+            <h1 class="title is-4">
+                Video Presentation
+            </h1>
+            <iframe style="display: block; margin: auto;" width="768" height="432" src="https://www.youtube.com/embed/x71KCZUC9SQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="container is-max-desktop is-hidden-desktop is-hidden-tablet">
+            <h1 class="title is-4">
+                Video Presentation
+            </h1>
+            <iframe style="display: block; margin: auto;" width="300" height="200" src="https://www.youtube.com/embed/x71KCZUC9SQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                BibTeX
+            </h1>
+            <pre>
+@inproceedings{sparc,
+author = {Langer, F. and Bae, G. and Budvytis, I. and Cipolla, R.},
+title = {SPARC: Sparse Render-and-Compare for CAD model alignment from a single RGB image},
+booktitle = {Proc. British Machine Vision Conference},
+month = {November},
+year = {2022},
+address={London}
+}
+</pre>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <img src="img/logo/Cam_bw.png" class="mt-5" alt="University of Cambridge" style="height: 2rem;">
+            </p>
+        </div>
+    </footer>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
+</html>
