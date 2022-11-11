@@ -17,7 +17,7 @@ If you find our work helpful for your research please consider citing the follow
 ```
 @inproceedings{sparc,
                author = {Langer, F. and Bae, G. and Budvytis, I. and Cipolla, R.},
-               title = {SPARC: Sparse Render-and-Compare for CAD model alignment from a single RGB image},
+               title = {SPARC: Sparse Render-and-Compare for CAD model alignment in a single RGB image},
                booktitle = {Proc. British Machine Vision Conference},
                month = {November},
                year = {2022},
