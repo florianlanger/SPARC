@@ -59,7 +59,7 @@ We also directly release our results. The `results` folder contains per frame pr
 
 ## Training/Evaluating
 To train open the config file in the SPARC code and replace the tags ["general"]["output_dir"] and ["general"]["dataset_dir"] with the intended output dir path and the path to the downloaded and unzipped SPARC data.
-For trainig run `python main.py'. For evaluating run `bash eval.sh`. This will evaluate the provided model by first selecting one of four rotation initialisations for each image and then iteratively improving the pose for the best initialisation. 
+For trainig run `python main.py`. For evaluating run `bash eval.sh`. This will evaluate the provided model by first selecting one of four rotation initialisations for each image and then iteratively improving the pose for the best initialisation. 
 
 
 
