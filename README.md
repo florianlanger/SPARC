@@ -5,7 +5,7 @@ Official implementation of the paper
 > **SPARC: Sparse Render-and-Compare for CAD model alignment from a single RGB image** \
 > British Machine Vision Conference 2022\
 > [Florian Langer][flo], [Gwangbin Bae][gb], [Ignas Budvytis][ignas], [Roberto Cipolla][roberto] \
-> [arXiv][1]
+> [arXiv][1] [Project Page][proj_page]
 
 Code will be released soon!
 
@@ -83,3 +83,4 @@ If you find our work helpful for your research please consider citing the follow
 [gb]: https://www.baegwangbin.com/about
 [py3d]: https://github.com/facebookresearch/pytorch3d
 [torch]: https://pytorch.org
+[proj_page]: https://florianlanger.github.io/SPARC/
