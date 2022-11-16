@@ -1,3 +1,5 @@
+# Taken from https://github.com/lucidrains/perceiver-pytorch/blob/main/perceiver_pytorch/perceiver_pytorch.py
+
 from math import pi, log
 from functools import wraps
 
