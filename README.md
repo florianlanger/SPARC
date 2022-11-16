@@ -35,7 +35,7 @@ cd SPARC && pip install -e .
 
 ## Data
 
-Download data from this link:
+Download data from this link: https://e1.pcloud.link/publink/show?code=XZ0oOQZ1nuA57shrQpAa7E2aGo8zz9AD5zX
 
 
 
