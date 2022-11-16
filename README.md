@@ -7,7 +7,6 @@ Official implementation of the paper
 > [Florian Langer][flo], [Gwangbin Bae][gb], [Ignas Budvytis][ignas], [Roberto Cipolla][roberto] \
 > [arXiv][1] [Project Page][proj_page]
 
-Code will be released soon!
 
 ## Installation Requirements
 - [PyTorch][torch]
