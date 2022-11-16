@@ -1,0 +1,11 @@
+matplotlib
+tensorboard
+setuptools==59.5.0
+opencv-python
+scipy
+numpy-quaternion
+pandas
+scikit-learn
+torch-optimizer
+imageio
+einops
