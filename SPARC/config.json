@@ -1,0 +1,151 @@
+{
+    "general":
+        {
+            "name": "p_classifier_025_add_rgb_add_rotation_1000_points_n_refinement_3_use_reprojected_as_query",
+            "gpu": "0",
+            "visualise": "True",
+            "output_dir": "/scratch2/fml35/experiments/SPARC_release/debug_01",
+            "dataset_dir": "/scratch2/fml35/datasets/own_data/scannet_sparc_release/data/",
+            "run_on_octopus": true
+        },
+    "training":
+        {
+            "batch_size": 80,
+            "batch_size_val": 80,
+            "n_same_objects_per_batch": 1,
+            "val_grid_points_per_example": 22,
+            "val_grid_points_correct": 8,
+            "n_epochs": 50000,
+            "momentum_sgd": 0.0,
+            "validate": true,
+            "validate_roca": true,
+            "only_eval_roca": false,
+            "save_interval": 20,
+            "roca_eval_interval": 20,
+            "n_vis": 1,
+            "n_vis_scenes": 0,
+            "vis_interval": 25,
+            "max_number": 200000,
+            "refinement_per_object": 3,
+            "use_refinement_after_which_epoch": -1,
+            "p_classifier": 0.25
+        },
+    "evaluate":
+        {
+            "rotation_index": 0
+        },
+    "loss":
+        {
+            "use_geometric_loss": false,
+            "constants_multiplier":
+            {
+                "classification": 0.5,
+                "t": 0.5,
+                "s": 0.5,
+                "r": 1,
+                "r_classification": 0.5
+            },
+            "train_only_classifier": false
+        },
+    "data":
+        {
+            "type": "points",
+            "targets": "labels",
+            "use_preloaded_depth_and_normals": true,
+            "name_depth_folder": "depth_gb",
+            "name_norm_folder": "norm",
+            "image_file_ending": ".jpg",
+            "size_preloaded": [160,120],
+            "use_canny": true,
+            "n_points_canny": 5000,
+            "use_random_points": true,
+            "number_random_points": 5000,
+            "use_all_points_2d": false,
+            "input_rgb": true,
+            "what_models": "points_and_normals",
+            "mark_visible_points": false,
+            "input_RST": false,
+            "input_RST_and_CAD_ID": true,
+            "add_history": false,
+            "input_3d_coords": false,
+            "use_3d_points": true,
+            "rerender_points": true,
+            "add_samples_from_within_bbox": true,
+            "number_of_samples_from_within_bbox": 1000,
+            "n_lines_3d": 100,
+            "n_points_3d": 1000,
+            "n_lines_2d": 60,
+            "n_points_per_line": 10,
+            "number_locations_per_pixel_2d": 1,
+            "distance_to_center_2d": 3,
+            "number_locations_per_pixel_reprojected": 1,
+            "distance_to_center_reprojected": 3,
+            "use_reprojected_points_as_query": true,
+            "use_border_cases": true,
+            "range_border_cases_t": [0.15,0.3],
+            "range_border_cases_s": [0.15,0.3],
+            "img_size": [480,360],
+            "sensor_width": 2,
+            "use_bbox": true,
+            "use_lines_2d": true,
+            "use_rgb": false,
+            "use_normals": true,
+            "use_depth": true,
+            "use_alpha": false,
+            "use_crop": false,
+            "sample_what": "T_and_R_and_S"
+        },
+    "data_augmentation":
+        {
+            "change_bbox_size_percent_img": 0.1,
+            "change_R_angle_degree":[10.0,44.9,20.0],
+            "N_rotations": 4,
+            "change_R_angle_degree_old":[10.0,40.0,20.0],
+            "percentage_lines_3d": 0.8,
+            "percentage_points_3d": 0.7,
+            "percentage_lines_2d": 0.8,
+            "sample_wrong_R_percentage": 0.0,
+            "augment_S": false,
+            "depth":
+                {
+                    "use_depth_augmentation": true,
+                    "probability_augmentation": 0.5,
+                    "max_augmentation": 0.2
+                }
+        },
+
+    "rotation_infos": {
+        "ignore_symmetry_for_sampling": false,
+        "random_rotate_R_before_input": true
+    },
+    "hard_example_mining":
+        {
+            "use": false,
+            "percentage_hard_examples": 0.5
+        },
+    "model":
+        {
+            "type": "perceiver",
+            "pretrained": true,
+            "perceiver_config":
+            {
+                "attn_dropout": 0.0,
+                "ff_dropout": 0.0,
+                "weight_tie_layers": true,
+                "depth": 3,
+                "num_latents": 128,
+                "latent_dim": 256,
+                "cross_heads": 1,
+                "num_freq_bands":64,
+                "max_freq": 1120,
+                "fourier_encode_data": true
+            },
+            "regress_offsets": true
+        },
+    "eval_roca":
+        {
+            "what_scale": "roca",
+            "what_rotation": "lines",
+            "what_retrieval": "roca"
+        }
+}
